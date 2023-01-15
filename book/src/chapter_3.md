@@ -176,6 +176,8 @@ fn try_move_player(delta_x: i32, delta_y: i32, ecs: &mut World) {
 
 The new parts are the `let map = ...` part, which uses `fetch` just the same way as the main loop (this is the advantage of storing it in the ECS - you can get to it everywhere without trying to coerce Rust into letting you use global variables!). We calculate the cell index of the player's destination with `let destination_idx = xy_idx(pos.x + delta_x, pos.y + delta_y);` - and if it isn't a wall, we move as normal.
 
+Now remove all references to `LeftWalker` and the 10 NPCs we created in `main`.
+
 Run the program (`cargo run`) now, and you have a player in a map - and can move around, properly obstructed by walls.
 
 ![Screenshot](./c3-s1.gif)
