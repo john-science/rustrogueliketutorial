@@ -39,7 +39,7 @@ Notice the `skip(1)` to ignore the first room - we don't want the player startin
 
 ![Screenshot](./c6-s1.png)
 
-That's a really good start! However, we're rendering monsters even if we can't see them. We probably only want to render the ones we can see. We can do this by modifying our render loop:
+That's a really good start! However, we're rendering monsters even if we can't see them. We probably only want to render the ones we can see. We can do this by modifying our render loop (in the main `tick` method):
 
 ```rust
 let positions = self.ecs.read_storage::<Position>();
@@ -317,7 +317,7 @@ Now we adjust the `monster_ai_system` to include the monster's name. The new AI 
 ```rust
 use specs::prelude::*;
 use super::{Viewshed, Monster, Name};
-use rltk::{Point};
+use rltk::{Point, console};
 
 pub struct MonsterAI {}
 

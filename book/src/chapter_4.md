@@ -158,7 +158,7 @@ pub fn new_map_rooms_and_corridors() -> Vec<TileType> {
     const MIN_SIZE : i32 = 6;
     const MAX_SIZE : i32 = 10;
 
-    let mut rng = RandomNumberGenerator::new();
+    let mut rng = rltk::RandomNumberGenerator::new();
 
     for _ in 0..MAX_ROOMS {
         let w = rng.range(MIN_SIZE, MAX_SIZE);
